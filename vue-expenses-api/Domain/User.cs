@@ -27,8 +27,8 @@ namespace vue_expenses_api.Domain
         public string LastName { get; set; }
         public string FullName { get; set; }
         public string Email { get; set; }
-        public string SystemName { get; set; } = "VueExpenses";
-        public string CurrencyRegionName { get; set; } = "GB";
+        public string SystemName { get; set; }
+        public string CurrencyRegionName { get; set; }
         public bool UseDarkMode { get; set; }
 
         [JsonIgnore]
@@ -36,6 +36,8 @@ namespace vue_expenses_api.Domain
 
         [JsonIgnore]
         public byte[] Salt { get; set; }
+        public string Role { get; set; }
+        public string Region { get; set; }
 
         private readonly List<RefreshToken> _refreshTokens = new List<RefreshToken>();
         public IReadOnlyCollection<RefreshToken> RefreshTokens => _refreshTokens.AsReadOnly();

@@ -99,7 +99,8 @@ namespace vue_expenses_api.Features.Users
                     token,
                     refreshToken,
                     user.CurrencyRegionName,
-                    user.UseDarkMode);
+                    user.UseDarkMode,
+                    user.Role, user.Region);
             }
 
 

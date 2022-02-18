@@ -18,7 +18,9 @@ namespace vue_expenses_api.Dtos
             string token,
             string refreshToken,
             string currencyRegionName,
-            bool useDarkMode)
+            bool useDarkMode,
+            string role,
+            string region)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -31,6 +33,8 @@ namespace vue_expenses_api.Dtos
             UseDarkMode = useDarkMode;
             Theme = useDarkMode ? "dark" : "light";
             DisplayCurrency = new RegionInfo(currencyRegionName).CurrencySymbol;
+            Role = role;
+            Region = region;
         }
 
         public string FirstName { get; set; }
@@ -44,6 +48,8 @@ namespace vue_expenses_api.Dtos
         public bool UseDarkMode { get; set; }
         public string Theme { get; set; }
         public string DisplayCurrency { get; set; }
+        public string Role { get; set; }
+        public string Region { get; set; }
 
         [JsonIgnore]
         public byte[] Hash { get; set; }
